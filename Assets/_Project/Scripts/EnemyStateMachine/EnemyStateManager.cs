@@ -7,6 +7,8 @@ public class EnemyStateManager : MonoBehaviour
 {
     public EnemyData enemyData;
 
+    public GameObject hitParticle;
+    
     public EnemyBaseState currentState;
 
     public AIPath starAgent;
@@ -23,6 +25,10 @@ public class EnemyStateManager : MonoBehaviour
     public HealthComponent healthComponent;
 
 
+    public void SetParticleEffect()
+    {
+        Instantiate(hitParticle, transform.position, Quaternion.identity);
+    }
     private void Awake()
     {
         playerTransform = FindObjectOfType<PlayerController>().transform;

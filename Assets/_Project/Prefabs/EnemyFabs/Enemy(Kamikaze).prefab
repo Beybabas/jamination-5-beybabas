@@ -166,6 +166,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyData: {fileID: 11400000, guid: f49f9df65aa0b334bb01798b2db4fc11, type: 2}
+  hitParticle: {fileID: 1787963530858246551, guid: 2ecac2a7aad70eb41bebecb3d1741d51, type: 3}
   starAgent: {fileID: 5516830305053672737}
   playerTransform: {fileID: 0}
   spriteRenderer: {fileID: 5516830304949497755}

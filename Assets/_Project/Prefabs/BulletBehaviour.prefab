@@ -51,6 +51,7 @@ MonoBehaviour:
   bigShot: {fileID: 11400000, guid: 3112320b152a69440b6ad2efc8c3a86a, type: 2}
   currentBullet: {fileID: 11400000, guid: 31fbfd38a30d56844bda1b65107ae911, type: 2}
   rb: {fileID: -4305195516771546441}
+  hitParticle: {fileID: 1787963530858246551, guid: 2ecac2a7aad70eb41bebecb3d1741d51, type: 3}
   spriteRenderer: {fileID: 5995074628923288510}
 --- !u!50 &-4305195516771546441
 Rigidbody2D:

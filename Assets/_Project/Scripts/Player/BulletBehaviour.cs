@@ -9,8 +9,9 @@ public class BulletBehaviour : MonoBehaviour
     [HideInInspector] public BulletData currentBullet;
 
     [SerializeField] private Rigidbody2D rb;
-
-    [SerializeField] private SpriteRenderer spriteRenderer;
+    
+    
+[SerializeField] private SpriteRenderer spriteRenderer;
 
 
     public void SelectSingleShot()
@@ -55,13 +56,13 @@ public class BulletBehaviour : MonoBehaviour
             if (col.TryGetComponent(out IDamageable idamageable))
             {
                 idamageable.Damage(currentBullet.damage);
-
                 BulletDestroyer();
             }
         }
     }
 
 
+    
     private void BulletDestroyer(float deadTimer = 0f)
     {
         Destroy(gameObject, deadTimer);
