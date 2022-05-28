@@ -7,6 +7,8 @@ public class PlayerController : MonoBehaviour
 {
     private Rigidbody2D rb;
     private float inputX;
+    private float inputY;
+
     private bool jumpInput;
     [SerializeField] private float jumpForce;
     [SerializeField] private float moveSpeed;
@@ -32,9 +34,11 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         inputX = Input.GetAxisRaw("Horizontal");
+        inputY = Input.GetAxisRaw("Vertical");
+
         jumpInput = Input.GetButtonDown("Jump");
 
-        rb.velocity = new Vector2(inputX * moveSpeed, rb.velocity.y);
+        rb.velocity = new Vector2(inputX * moveSpeed, inputY * moveSpeed);
 
         if (jumpInput && IsGrounded())
         {
@@ -54,13 +58,13 @@ public class PlayerController : MonoBehaviour
     private void FixedUpdate()
     {
         RaycastHit2D hit2D = Physics2D.Raycast(transform.position, Vector2.down, 2, groundLayer);
-   
+
         if (hit2D.collider != null)
         {
-
             float targetRotationAngle = -(90 - Vector2.Angle(hit2D.normal, Vector2.right));
 
-            transform.rotation = Quaternion.Lerp(transform.rotation,Quaternion.Euler(0, 0, targetRotationAngle), groundRotationSpeed * Time.deltaTime);
+            transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(0, 0, targetRotationAngle),
+                groundRotationSpeed * Time.deltaTime);
             //transform.rotation = Quaternion.Euler(0, 0, targetRotationAngle);
         }
     }
