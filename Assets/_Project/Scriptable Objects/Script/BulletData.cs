@@ -7,7 +7,6 @@ public class BulletData : ScriptableObject
 
     public Sprite sprite;
     
-    public float projectileSpeed;
     public float bulletForce;
     public float delayTime;
 
