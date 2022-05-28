@@ -11,8 +11,8 @@ public class BulletBehaviour : MonoBehaviour
     [SerializeField] private Rigidbody2D rb;
 
     [SerializeField] private SpriteRenderer spriteRenderer;
-    
-    
+
+
     public void SelectSingleShot()
     {
         currentBullet = singleShot;
@@ -26,21 +26,19 @@ public class BulletBehaviour : MonoBehaviour
     {
         currentBullet = bigShot;
         spriteRenderer.sprite = currentBullet.sprite;
-        
+
         transform.localScale = currentBullet.bulletScale;
     }
-    
-    
-   
+
+
     private void Awake()
     {
-        
         //SetCurrentBullet(singleShot);
     }
 
     private void Start()
     {
-        Destroy(gameObject, 7f);
+        BulletDestroyer(currentBullet.deadTimer);
     }
 
     public void AddForce(Vector2 bulletDir)
@@ -51,13 +49,21 @@ public class BulletBehaviour : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D col)
     {
-       var enemyBaseState = col.GetComponent<EnemyStateManager>();
+        var enemyBaseState = col.GetComponent<EnemyStateManager>();
         if (enemyBaseState != null)
         {
             if (col.TryGetComponent(out IDamageable idamageable))
             {
                 idamageable.Damage(currentBullet.damage);
+
+                BulletDestroyer();
             }
         }
+    }
+
+
+    private void BulletDestroyer(float deadTimer = 0f)
+    {
+        Destroy(gameObject, deadTimer);
     }
 }

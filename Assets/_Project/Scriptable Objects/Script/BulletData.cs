@@ -14,4 +14,6 @@ public class BulletData : ScriptableObject
 
     public int damage;
 
+    public float deadTimer;
+
 }

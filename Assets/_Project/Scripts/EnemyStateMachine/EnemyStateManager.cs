@@ -26,7 +26,7 @@ public class EnemyStateManager : MonoBehaviour
     private void Awake()
     {
         playerTransform = FindObjectOfType<PlayerController>().transform;
-        
+
         spriteRenderer.sprite = enemyData.sprite;
         starAgent.maxSpeed = enemyData.moveSpeed;
 
@@ -67,6 +67,9 @@ public class EnemyStateManager : MonoBehaviour
         switch (enemyType)
         {
             case EnemyType.kamikaze:
+                SwitchState(rushToPlayerState);
+                break;
+            case EnemyType.ranger:
                 SwitchState(rushToPlayerState);
                 break;
         }
