@@ -32,7 +32,7 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         inputX = Input.GetAxisRaw("Horizontal");
-        jumpInput = Input.GetButton("Jump");
+        jumpInput = Input.GetButtonDown("Jump");
 
         rb.velocity = new Vector2(inputX * moveSpeed, rb.velocity.y);
 

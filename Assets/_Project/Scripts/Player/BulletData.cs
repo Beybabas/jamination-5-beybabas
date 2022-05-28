@@ -5,7 +5,9 @@
 public class BulletData : ScriptableObject
 {
 
-    [SerializeField] private Sprite sprite;
+    public Sprite sprite;
     
-    [SerializeField] private float projectileSpeed;
+    public float projectileSpeed;
+    public float bulletForce;
+    public float delayTime;
 }

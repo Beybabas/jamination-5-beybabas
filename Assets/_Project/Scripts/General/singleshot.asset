@@ -12,5 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e12c6f43b25a4380ab210b83dbfebf61, type: 3}
   m_Name: singleshot
   m_EditorClassIdentifier: 
-  sprite: {fileID: 0}
+  sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
   projectileSpeed: 20
+  bulletForce: 20
+  delayTime: 0.05

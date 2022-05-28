@@ -410,7 +410,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 965021d350a8451c9952bce12ce1812a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _bulletBehaviour: {fileID: 4969319427731938415, guid: 1a3038e46b470b84bb0f54d678de13a1, type: 3}
+  bulletBehaviour: {fileID: 4969319427731938415, guid: 1a3038e46b470b84bb0f54d678de13a1, type: 3}
+  companionTransform: {fileID: 1575005216}
 --- !u!50 &3355596992787803597
 Rigidbody2D:
   serializedVersion: 4
