@@ -1,27 +1,40 @@
 ﻿using System;
+using PathCreation;
 using UnityEngine;
-
 
 public class CompanionController : MonoBehaviour
 {
-    [SerializeField] private float inputForce;
+    [SerializeField] private PathCreator pathCreator;
 
-    private Rigidbody2D rb;
 
-    private Vector2 inputVector;
+    [SerializeField] private float moveSpeed;
+
+    private float distanceTravelled;
+
+    private float inputX;
+
+
+    [SerializeField] private float endLimit = 0.3f;
+    [SerializeField] private Transform companionTransform;
+    
 
     private void Awake()
     {
-        rb = GetComponent<Rigidbody2D>();
     }
 
 
     private void Update()
     {
-        inputVector.x = Input.GetAxisRaw("Horizontal");
-        inputVector.y = Input.GetAxisRaw("Vertical");
+        inputX = Input.GetAxisRaw("Horizontal");
 
 
-        rb.AddForce(inputVector * inputForce, ForceMode2D.Force);
+        distanceTravelled += moveSpeed * inputX * Time.deltaTime;
+        distanceTravelled = Mathf.Clamp(distanceTravelled, 0, pathCreator.path.length);
+
+        if (distanceTravelled < pathCreator.path.length - endLimit || distanceTravelled > endLimit )
+        {
+            companionTransform.position = pathCreator.path.GetPointAtDistance(distanceTravelled, EndOfPathInstruction.Stop);
+        }
+
     }
 }

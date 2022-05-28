@@ -33,7 +33,7 @@ public class PlayerController : MonoBehaviour
 
         if (inputX != 0)
         {
-            transform.localScale = new Vector3(Mathf.Sign(inputX), 1, 1);
+            //transform.localScale = new Vector3(Mathf.Sign(inputX), 1, 1);
         }
     }
 

@@ -755,6 +755,50 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 73121964, guid: 3989692e890384a40b3c4d61f4716c14, type: 3}
+      propertyPath: editorData.vertexPathUpToDate
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 73121964, guid: 3989692e890384a40b3c4d61f4716c14, type: 3}
+      propertyPath: editorData._bezierPath.points.Array.data[0].x
+      value: -0.65
+      objectReference: {fileID: 0}
+    - target: {fileID: 73121964, guid: 3989692e890384a40b3c4d61f4716c14, type: 3}
+      propertyPath: editorData._bezierPath.points.Array.data[1].x
+      value: -0.65
+      objectReference: {fileID: 0}
+    - target: {fileID: 73121964, guid: 3989692e890384a40b3c4d61f4716c14, type: 3}
+      propertyPath: editorData._bezierPath.points.Array.data[2].x
+      value: -0.764316
+      objectReference: {fileID: 0}
+    - target: {fileID: 73121964, guid: 3989692e890384a40b3c4d61f4716c14, type: 3}
+      propertyPath: editorData._bezierPath.points.Array.data[2].y
+      value: -1.1851218
+      objectReference: {fileID: 0}
+    - target: {fileID: 73121964, guid: 3989692e890384a40b3c4d61f4716c14, type: 3}
+      propertyPath: editorData._bezierPath.points.Array.data[3].y
+      value: -1.1411383
+      objectReference: {fileID: 0}
+    - target: {fileID: 73121964, guid: 3989692e890384a40b3c4d61f4716c14, type: 3}
+      propertyPath: editorData._bezierPath.points.Array.data[4].x
+      value: 0.7146522
+      objectReference: {fileID: 0}
+    - target: {fileID: 73121964, guid: 3989692e890384a40b3c4d61f4716c14, type: 3}
+      propertyPath: editorData._bezierPath.points.Array.data[4].y
+      value: -1.1000128
+      objectReference: {fileID: 0}
+    - target: {fileID: 73121964, guid: 3989692e890384a40b3c4d61f4716c14, type: 3}
+      propertyPath: editorData._bezierPath.points.Array.data[5].x
+      value: 0.65
+      objectReference: {fileID: 0}
+    - target: {fileID: 73121964, guid: 3989692e890384a40b3c4d61f4716c14, type: 3}
+      propertyPath: editorData._bezierPath.points.Array.data[6].x
+      value: 0.65
+      objectReference: {fileID: 0}
+    - target: {fileID: 73121965, guid: 3989692e890384a40b3c4d61f4716c14, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.97
+      objectReference: {fileID: 0}
     - target: {fileID: 3355596992787803595, guid: 3989692e890384a40b3c4d61f4716c14, type: 3}
       propertyPath: m_Name
       value: Player
