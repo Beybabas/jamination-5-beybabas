@@ -13,6 +13,11 @@ public class CompanionController : MonoBehaviour
 
     private float inputX;
 
+    [SerializeField] private Transform companionPathFollowerTransform;
+
+
+    [SerializeField] private float idleMoveSpeed;
+    [SerializeField] private float idleMoveOffset;
     [SerializeField] private Transform companionTransform;
 
 
@@ -29,6 +34,9 @@ public class CompanionController : MonoBehaviour
         distanceTravelled += moveSpeed * inputX * Time.deltaTime;
         distanceTravelled = Mathf.Clamp(distanceTravelled, 0, pathCreator.path.length);
 
-        companionTransform.position = pathCreator.path.GetPointAtDistance(distanceTravelled, EndOfPathInstruction.Stop);
+        companionPathFollowerTransform.position = pathCreator.path.GetPointAtDistance(distanceTravelled, EndOfPathInstruction.Stop);
+
+
+        companionTransform.localPosition = new Vector2(Mathf.Sin(Time.time*idleMoveSpeed)*idleMoveOffset, Mathf.Sin(Time.time*idleMoveSpeed)*idleMoveOffset);
     }
 }
