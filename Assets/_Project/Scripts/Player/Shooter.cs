@@ -33,7 +33,6 @@ public class Shooter : MonoBehaviour
 
         var _bullet = Instantiate(bulletBehaviour,companionTransform.position,quaternion.identity).GetComponent<BulletBehaviour>();
         _bullet.SelectSingleShot();
-        
         _bullet.AddForce(shootDir);
         
         

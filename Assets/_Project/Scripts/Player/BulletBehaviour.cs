@@ -26,6 +26,7 @@ public class BulletBehaviour : MonoBehaviour
 
     private void Start()
     {
+        Destroy(gameObject, 4f);
     }
 
     public void AddForce(Vector2 bulletDir)
