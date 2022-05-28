@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
   projectileSpeed: 20
-  bulletForce: 20
-  delayTime: 0.05
+  bulletForce: 10
+  delayTime: 0
