@@ -48,7 +48,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   singleShot: {fileID: 11400000, guid: 31fbfd38a30d56844bda1b65107ae911, type: 2}
-  currentBullet: {fileID: 0}
+  bigShot: {fileID: 11400000, guid: 3112320b152a69440b6ad2efc8c3a86a, type: 2}
+  currentBullet: {fileID: 11400000, guid: 31fbfd38a30d56844bda1b65107ae911, type: 2}
   rb: {fileID: -4305195516771546441}
   spriteRenderer: {fileID: 5995074628923288510}
 --- !u!50 &-4305195516771546441
@@ -87,7 +88,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.17
+  m_Radius: 0.15
 --- !u!1 &5995074628923288640
 GameObject:
   m_ObjectHideFlags: 0

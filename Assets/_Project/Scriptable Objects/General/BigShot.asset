@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e12c6f43b25a4380ab210b83dbfebf61, type: 3}
-  m_Name: SingleShot
+  m_Name: BigShot
   m_EditorClassIdentifier: 
-  sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
+  sprite: {fileID: -5177388603050735206, guid: 8884154dfe85442a3a3578be807dbcdf, type: 3}
   projectileSpeed: 20
-  bulletForce: 10
-  delayTime: 0.05
-  bulletScale: {x: 1, y: 1, z: 1}
+  bulletForce: 2
+  delayTime: 0.1
+  bulletScale: {x: 1.5, y: 1.5, z: 1.5}

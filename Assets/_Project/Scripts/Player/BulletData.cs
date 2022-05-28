@@ -10,4 +10,7 @@ public class BulletData : ScriptableObject
     public float projectileSpeed;
     public float bulletForce;
     public float delayTime;
+
+    public Vector3 bulletScale;
+
 }

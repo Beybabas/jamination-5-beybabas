@@ -5,6 +5,7 @@ using UnityEngine;
 public class BulletBehaviour : MonoBehaviour
 {
     [SerializeField] private BulletData singleShot;
+    [SerializeField] private BulletData bigShot;
     [HideInInspector] public BulletData currentBullet;
 
     [SerializeField] private Rigidbody2D rb;
@@ -16,8 +17,21 @@ public class BulletBehaviour : MonoBehaviour
     {
         currentBullet = singleShot;
         spriteRenderer.sprite = currentBullet.sprite;
+
+        transform.localScale = currentBullet.bulletScale;
     }
 
+
+    public void SelectBigShot()
+    {
+        currentBullet = bigShot;
+        spriteRenderer.sprite = currentBullet.sprite;
+        
+        transform.localScale = currentBullet.bulletScale;
+    }
+    
+    
+   
     private void Awake()
     {
         
@@ -26,7 +40,7 @@ public class BulletBehaviour : MonoBehaviour
 
     private void Start()
     {
-        Destroy(gameObject, 4f);
+        Destroy(gameObject, 7f);
     }
 
     public void AddForce(Vector2 bulletDir)

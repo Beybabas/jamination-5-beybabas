@@ -15,11 +15,15 @@ public class Shooter : MonoBehaviour
 
     [SerializeField] private bool canShoot = true;
 
+
+    [SerializeField] private bool isClockWise;
+
+
     private void Update()
     {
         shootDir = (companionTransform.position - transform.position).normalized;
 
-        if (canShoot && Input.anyKeyDown)
+        if (canShoot && (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D)))
         {
             EventManager.FireEvent();
         }
@@ -29,12 +33,20 @@ public class Shooter : MonoBehaviour
     private void OnEnable()
     {
         EventManager.OnFire += ShootStarter;
-        
+
+        EventManager.OnclockWise += ()=> isClockWise = true;
+        EventManager.OncounterClockWise += ()=> isClockWise = false;
     }
 
     private void OnDisable()
     {
         EventManager.OnFire -= ShootStarter;
+        
+    }
+
+
+    private void SelectSingleShot()
+    {
     }
 
 
@@ -47,7 +59,18 @@ public class Shooter : MonoBehaviour
             canShoot = false;
 
             var _bullet = Instantiate(bulletBehaviour, companionTransform.position, quaternion.identity).GetComponent<BulletBehaviour>();
-            _bullet.SelectSingleShot();
+
+
+            if (isClockWise)
+            {
+                _bullet.SelectSingleShot();
+            }
+            else
+            {
+                _bullet.SelectBigShot();
+            }
+
+
             _bullet.AddForce(shootDir);
 
 
@@ -56,4 +79,9 @@ public class Shooter : MonoBehaviour
             canShoot = true;
         }
     }
+
+
+    
+
+    
 }

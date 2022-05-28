@@ -41,7 +41,7 @@ public class CompanionController : MonoBehaviour
     {
         _companionTransform.RotateAround(transform.position, Vector3.forward, _rotateSpeed * Mathf.Sin(Time.deltaTime) * 10f * clockWise);
 
-        if (Input.GetKeyDown(KeyCode.LeftShift))
+        if (Input.GetKeyDown(KeyCode.LeftControl))
         {
             if (isClockWise)
             {
