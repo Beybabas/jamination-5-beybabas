@@ -19,8 +19,10 @@ public class RushToPlayerState : EnemyBaseState
         {
             elapsedTime = 0;
 
-            if (Vector2.Distance(enemy.playerTransform.position,enemy.transform.position) < ArrivalDistanceHolder.CLOSE_RANGE )
+            if (Vector2.Distance(enemy.playerTransform.position,enemy.transform.position) < ArrivalDistanceHolder.MID_RANGE )
             {
+
+                enemy.playerTransform.GetComponent<IDamageable>().Damage(enemy.enemyData.contactDamage);
                 enemy.SwitchState(enemy.dieState);
             }
         }

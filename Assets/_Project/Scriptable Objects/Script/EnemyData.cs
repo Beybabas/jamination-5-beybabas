@@ -13,4 +13,6 @@
 
         public int maxHealth;
 
+        public int contactDamage;
+        public int projectileDamage;
     }

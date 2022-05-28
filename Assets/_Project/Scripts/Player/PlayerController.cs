@@ -13,10 +13,22 @@ public class PlayerController : MonoBehaviour
 
     [SerializeField] private Transform playerSprite;
 
+    [SerializeField] private HealthComponent _healthComponent;
+    
 
     void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
+    }
+
+    private void OnEnable()
+    {
+        _healthComponent.OnDie += GameManager.instance.GameOver;
+    }
+
+    private void OnDisable()
+    {
+        _healthComponent.OnDie -= GameManager.instance.GameOver;
     }
 
     void Update()
@@ -31,21 +43,7 @@ public class PlayerController : MonoBehaviour
 
 
     }
-    
-
-    private void FixedUpdate()
-    {
-        // RaycastHit2D hit2D = Physics2D.Raycast(transform.position, Vector2.down, 2, groundLayer);
-        //
-        // if (hit2D.collider != null)
-        // {
-        //     float targetRotationAngle = -(90 - Vector2.Angle(hit2D.normal, Vector2.right));
-        //
-        //     transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(0, 0, targetRotationAngle),
-        //         groundRotationSpeed * Time.deltaTime);
-        //     //transform.rotation = Quaternion.Euler(0, 0, targetRotationAngle);
-        // }
-    }
+   
 
    
 }

@@ -244,6 +244,7 @@ GameObject:
   - component: {fileID: 3355596992787803594}
   - component: {fileID: 1931545610487733424}
   - component: {fileID: 1438720200803452724}
+  - component: {fileID: 3111207856683523940}
   - component: {fileID: 3355596992787803597}
   - component: {fileID: 3355596992787803599}
   m_Layer: 0
@@ -282,8 +283,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3566db01fafa4e8486dd69fc9153edef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 5
+  moveSpeed: 2
   playerSprite: {fileID: 3355596992941780383}
+  _healthComponent: {fileID: 3111207856683523940}
 --- !u!114 &1931545610487733424
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -316,6 +318,20 @@ MonoBehaviour:
   companionTransform: {fileID: 1575005216}
   canShoot: 1
   isClockWise: 0
+--- !u!114 &3111207856683523940
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3355596992787803595}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6038450ba7d544ce8800c630d069d5a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentHealth: 0
+  enemyData: {fileID: 11400000, guid: c7041dd88e369c54a985da2dfd622917, type: 2}
 --- !u!50 &3355596992787803597
 Rigidbody2D:
   serializedVersion: 4

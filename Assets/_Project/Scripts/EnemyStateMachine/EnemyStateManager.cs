@@ -26,6 +26,7 @@ public class EnemyStateManager : MonoBehaviour
     private void Awake()
     {
         playerTransform = FindObjectOfType<PlayerController>().transform;
+        
         spriteRenderer.sprite = enemyData.sprite;
         starAgent.maxSpeed = enemyData.moveSpeed;
 
