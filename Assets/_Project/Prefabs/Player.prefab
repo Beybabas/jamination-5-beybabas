@@ -114,8 +114,8 @@ Transform:
   m_GameObject: {fileID: 326818805}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.85, y: 0.85, z: 0.85}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 1881233174}
   m_Father: {fileID: 1575005216}
@@ -373,12 +373,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   jumpForce: 10
-  moveSpeed: 2
+  moveSpeed: 5
+  rotateSpeed: 0.5
+  groundRotationSpeed: 5
   groundLayer:
     serializedVersion: 2
     m_Bits: 64
   groundCheckTransform: {fileID: 3355596993019823034}
   groundCheckRadius: 0.2
+  playerSprite: {fileID: 3355596992941780383}
 --- !u!114 &1931545610487733424
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -392,8 +395,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pathCreator: {fileID: 73121964}
-  moveSpeed: 10
-  endLimit: 0.3
+  moveSpeed: 3
   companionTransform: {fileID: 1575005216}
 --- !u!50 &3355596992787803597
 Rigidbody2D:
@@ -410,7 +412,7 @@ Rigidbody2D:
   m_Mass: 10
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 10
   m_Material: {fileID: 6200000, guid: dae4c928672ed1a48ac260be4da72333, type: 2}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -488,7 +490,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3355596993019823035}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.97, z: 0}
+  m_LocalPosition: {x: 0, y: -0.43, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

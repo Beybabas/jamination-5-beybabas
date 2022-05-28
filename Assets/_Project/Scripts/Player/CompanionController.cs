@@ -13,10 +13,8 @@ public class CompanionController : MonoBehaviour
 
     private float inputX;
 
-
-    [SerializeField] private float endLimit = 0.3f;
     [SerializeField] private Transform companionTransform;
-    
+
 
     private void Awake()
     {
@@ -31,10 +29,6 @@ public class CompanionController : MonoBehaviour
         distanceTravelled += moveSpeed * inputX * Time.deltaTime;
         distanceTravelled = Mathf.Clamp(distanceTravelled, 0, pathCreator.path.length);
 
-        if (distanceTravelled < pathCreator.path.length - endLimit || distanceTravelled > endLimit )
-        {
-            companionTransform.position = pathCreator.path.GetPointAtDistance(distanceTravelled, EndOfPathInstruction.Stop);
-        }
-
+        companionTransform.position = pathCreator.path.GetPointAtDistance(distanceTravelled, EndOfPathInstruction.Stop);
     }
 }
