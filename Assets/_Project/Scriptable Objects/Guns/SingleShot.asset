@@ -17,4 +17,4 @@ MonoBehaviour:
   delayTime: 0.05
   bulletScale: {x: 1, y: 1, z: 1}
   damage: 30
-  deadTimer: 2
+  deadTimer: 1

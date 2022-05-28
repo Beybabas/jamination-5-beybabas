@@ -409,6 +409,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy(Ranger)
       objectReference: {fileID: 0}
+    - target: {fileID: 5516830305053672732, guid: 432fbc47298e3834e9ce60c09626e1f1, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5516830305053672734, guid: 432fbc47298e3834e9ce60c09626e1f1, type: 3}
       propertyPath: m_RootOrder
       value: 7
@@ -539,6 +543,10 @@ PrefabInstance:
     - target: {fileID: 5516830305053672732, guid: 00598555d0a4c404db4eb52850d14ee0, type: 3}
       propertyPath: m_Name
       value: Enemy(Kamikaze) (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5516830305053672732, guid: 00598555d0a4c404db4eb52850d14ee0, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5516830305053672734, guid: 00598555d0a4c404db4eb52850d14ee0, type: 3}
       propertyPath: m_RootOrder
@@ -683,6 +691,10 @@ PrefabInstance:
     - target: {fileID: 5516830305053672732, guid: 00598555d0a4c404db4eb52850d14ee0, type: 3}
       propertyPath: m_Name
       value: Enemy(Kamikaze) (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5516830305053672732, guid: 00598555d0a4c404db4eb52850d14ee0, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5516830305053672734, guid: 00598555d0a4c404db4eb52850d14ee0, type: 3}
       propertyPath: m_RootOrder
@@ -836,6 +848,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy(Ranger) (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 5516830305053672732, guid: 432fbc47298e3834e9ce60c09626e1f1, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5516830305053672734, guid: 432fbc47298e3834e9ce60c09626e1f1, type: 3}
       propertyPath: m_RootOrder
       value: 14
@@ -893,6 +909,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy(Kamikaze) (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 5516830305053672732, guid: 00598555d0a4c404db4eb52850d14ee0, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5516830305053672734, guid: 00598555d0a4c404db4eb52850d14ee0, type: 3}
       propertyPath: m_RootOrder
       value: 16
@@ -949,6 +969,10 @@ PrefabInstance:
     - target: {fileID: 5516830305053672732, guid: 432fbc47298e3834e9ce60c09626e1f1, type: 3}
       propertyPath: m_Name
       value: Enemy(Ranger) (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5516830305053672732, guid: 432fbc47298e3834e9ce60c09626e1f1, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5516830305053672734, guid: 432fbc47298e3834e9ce60c09626e1f1, type: 3}
       propertyPath: m_RootOrder
@@ -1042,6 +1066,10 @@ PrefabInstance:
     - target: {fileID: 5516830305053672732, guid: 00598555d0a4c404db4eb52850d14ee0, type: 3}
       propertyPath: m_Name
       value: Enemy(Kamikaze) (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5516830305053672732, guid: 00598555d0a4c404db4eb52850d14ee0, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5516830305053672734, guid: 00598555d0a4c404db4eb52850d14ee0, type: 3}
       propertyPath: m_RootOrder
@@ -1519,6 +1547,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy(Ranger) (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 5516830305053672732, guid: 432fbc47298e3834e9ce60c09626e1f1, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5516830305053672734, guid: 432fbc47298e3834e9ce60c09626e1f1, type: 3}
       propertyPath: m_RootOrder
       value: 10
@@ -1694,6 +1726,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy(Ranger) (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 5516830305053672732, guid: 432fbc47298e3834e9ce60c09626e1f1, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5516830305053672734, guid: 432fbc47298e3834e9ce60c09626e1f1, type: 3}
       propertyPath: m_RootOrder
       value: 11
@@ -1751,6 +1787,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 3355596992787803595, guid: 3989692e890384a40b3c4d61f4716c14, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3355596992787803596, guid: 3989692e890384a40b3c4d61f4716c14, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -1807,6 +1847,10 @@ PrefabInstance:
     - target: {fileID: 5516830305053672732, guid: 00598555d0a4c404db4eb52850d14ee0, type: 3}
       propertyPath: m_Name
       value: Enemy(Kamikaze)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5516830305053672732, guid: 00598555d0a4c404db4eb52850d14ee0, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5516830305053672734, guid: 00598555d0a4c404db4eb52850d14ee0, type: 3}
       propertyPath: m_RootOrder
