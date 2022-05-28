@@ -12,4 +12,6 @@ public class BulletData : ScriptableObject
 
     public Vector3 bulletScale;
 
+    public int damage;
+
 }

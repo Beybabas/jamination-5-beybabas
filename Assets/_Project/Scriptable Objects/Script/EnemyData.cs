@@ -10,7 +10,7 @@
         public float contactRadius;
 
         public EnemyType enemyType;
-        
 
+        public int maxHealth;
 
     }

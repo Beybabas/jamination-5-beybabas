@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: BigShot
   m_EditorClassIdentifier: 
   sprite: {fileID: -5177388603050735206, guid: 8884154dfe85442a3a3578be807dbcdf, type: 3}
-  projectileSpeed: 20
   bulletForce: 2
   delayTime: 0.1
   bulletScale: {x: 1.5, y: 1.5, z: 1.5}
+  damage: 60

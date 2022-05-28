@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: SingleShot
   m_EditorClassIdentifier: 
   sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
-  projectileSpeed: 20
   bulletForce: 10
   delayTime: 0.05
   bulletScale: {x: 1, y: 1, z: 1}
+  damage: 30

@@ -47,4 +47,17 @@ public class BulletBehaviour : MonoBehaviour
     {
         rb.AddForce(bulletDir * currentBullet.bulletForce, ForceMode2D.Impulse);
     }
+
+
+    private void OnTriggerEnter2D(Collider2D col)
+    {
+       var enemyBaseState = col.GetComponent<EnemyStateManager>();
+        if (enemyBaseState != null)
+        {
+            if (col.TryGetComponent(out IDamageable idamageable))
+            {
+                idamageable.Damage(currentBullet.damage);
+            }
+        }
+    }
 }
