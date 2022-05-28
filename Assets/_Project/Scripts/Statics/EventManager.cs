@@ -1,18 +1,13 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+using System;
 
-public class EventManager : MonoBehaviour
+public static class EventManager
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public static event Action OnclockWise;
+    public static event Action OncounterClockWise;
+    public static event Action OnFire;
+    
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    public static void ClockWiseEvent() => OnclockWise?.Invoke();
+    public static void CounterClockWiseEvent() => OncounterClockWise?.Invoke();
+    public static void FireEvent() => OnFire?.Invoke();
 }

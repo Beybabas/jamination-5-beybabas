@@ -1,42 +1,69 @@
 ﻿using System;
 using PathCreation;
+using Unity.Mathematics;
 using UnityEngine;
 
 public class CompanionController : MonoBehaviour
 {
-    [SerializeField] private PathCreator pathCreator;
+    [SerializeField] private float _rotateSpeed;
 
+    [SerializeField] private Transform _companionTransform;
 
-    [SerializeField] private float moveSpeed;
-
-    private float distanceTravelled;
-
-    private float inputX;
-
-    [SerializeField] private Transform companionPathFollowerTransform;
-
-
-    [SerializeField] private float idleMoveSpeed;
-    [SerializeField] private float idleMoveOffset;
-    [SerializeField] private Transform companionTransform;
+    [SerializeField] private int clockWise;
+    [SerializeField] private bool isClockWise;
 
 
     private void Awake()
     {
+        
+    }
+
+    private void Start()
+    {
+        EventManager.ClockWiseEvent();
     }
 
 
+    private void OnEnable()
+    {
+        EventManager.OnclockWise += ClockWise;
+        EventManager.OncounterClockWise += CounterClockWise;
+
+    }
+
+    private void OnDisable()
+    {
+        EventManager.OnclockWise -= ClockWise;
+        EventManager.OncounterClockWise -= CounterClockWise;
+    }
+
     private void Update()
     {
-        inputX = Input.GetAxisRaw("Horizontal");
+        _companionTransform.RotateAround(transform.position, Vector3.forward, _rotateSpeed * Mathf.Sin(Time.deltaTime) * 10f * clockWise);
+
+        if (Input.GetKeyDown(KeyCode.LeftShift))
+        {
+            if (isClockWise)
+            {
+                EventManager.CounterClockWiseEvent();
+            }
+            else
+            {
+                EventManager.ClockWiseEvent();
+            }
+        }
+    }
 
 
-        distanceTravelled += moveSpeed * inputX * Time.deltaTime;
-        distanceTravelled = Mathf.Clamp(distanceTravelled, 0, pathCreator.path.length);
+    private void ClockWise()
+    {
+        clockWise = 1;
+        isClockWise = true;
+    }
 
-        companionPathFollowerTransform.position = pathCreator.path.GetPointAtDistance(distanceTravelled, EndOfPathInstruction.Stop);
-
-
-        companionTransform.localPosition = new Vector2(Mathf.Sin(Time.time*idleMoveSpeed)*idleMoveOffset, Mathf.Sin(Time.time*idleMoveSpeed)*idleMoveOffset);
+    private void CounterClockWise()
+    {
+        clockWise = -1;
+        isClockWise = false;
     }
 }
