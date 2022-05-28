@@ -332,6 +332,7 @@ GameObject:
   - component: {fileID: 3355596992787803596}
   - component: {fileID: 3355596992787803594}
   - component: {fileID: 1931545610487733424}
+  - component: {fileID: 1438720200803452724}
   - component: {fileID: 3355596992787803597}
   - component: {fileID: 3355596992787803599}
   m_Layer: 0
@@ -397,6 +398,19 @@ MonoBehaviour:
   pathCreator: {fileID: 73121964}
   moveSpeed: 3
   companionTransform: {fileID: 1575005216}
+--- !u!114 &1438720200803452724
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3355596992787803595}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 965021d350a8451c9952bce12ce1812a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _bulletBehaviour: {fileID: 4969319427731938415, guid: 1a3038e46b470b84bb0f54d678de13a1, type: 3}
 --- !u!50 &3355596992787803597
 Rigidbody2D:
   serializedVersion: 4
@@ -412,7 +426,7 @@ Rigidbody2D:
   m_Mass: 10
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 10
+  m_GravityScale: 5
   m_Material: {fileID: 6200000, guid: dae4c928672ed1a48ac260be4da72333, type: 2}
   m_Interpolate: 0
   m_SleepingMode: 1
