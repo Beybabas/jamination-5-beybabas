@@ -17,7 +17,7 @@ public class SpinAndAttakState : EnemyBaseState
     public override void UpdateState(EnemyStateManager enemy)
     {
         elapsedTime += Time.deltaTime;
-        if (elapsedTime > 1f)
+        if (elapsedTime > 2f)
         {
             if (raySwitch)
             {
@@ -32,7 +32,7 @@ public class SpinAndAttakState : EnemyBaseState
 
             foreach (var position in GetSpawnPositions(enemy,rayCount))
             {
-                enemy.FireProjectile(position,1,50);
+                enemy.FireProjectile(position,1,enemy.enemyData.projectileDamage);
             }
 
             enemy.transform.DOPunchScale(Vector3.one * 0.3f, 0.3f).OnComplete(()=> enemy.transform.DORotate(new Vector3(0,0, enemy.transform.eulerAngles.z+30),0.25f));

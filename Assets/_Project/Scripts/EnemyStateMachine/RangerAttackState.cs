@@ -69,7 +69,7 @@ public class RangerAttackState : EnemyBaseState
 
         var dirToPlayer = (enemy.playerTransform.position - enemy.transform.position).normalized;
 
-        enemy.FireProjectile(dirToPlayer, enemy.bulletForce, enemy.bulletDamage);
+        enemy.FireProjectile(dirToPlayer, enemy.bulletForce, enemy.enemyData.projectileDamage);
 
 
         enemy.SwitchState(enemy.rangerAttackState);

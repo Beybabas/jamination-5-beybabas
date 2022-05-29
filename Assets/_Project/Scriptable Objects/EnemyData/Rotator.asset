@@ -18,4 +18,4 @@ MonoBehaviour:
   enemyType: 2
   maxHealth: 200
   contactDamage: 100
-  projectileDamage: 0
+  projectileDamage: 10

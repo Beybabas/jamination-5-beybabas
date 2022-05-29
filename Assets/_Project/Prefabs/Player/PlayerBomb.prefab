@@ -80,7 +80,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _particleSystem: {fileID: 5048153194044277922, guid: f926a3bfb938c8f42af2f8db6dcdaf6b, type: 3}
   bombDamage: 10
-  explosionRadius: 1.3
+  explosionRadius: 3
   bombEffect: {fileID: 1787963530858246551, guid: 2ecac2a7aad70eb41bebecb3d1741d51, type: 3}
 --- !u!58 &1612060970686297159
 CircleCollider2D:
