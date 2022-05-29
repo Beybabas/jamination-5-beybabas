@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
   bulletForce: 10
-  delayTime: 0.05
+  delayTime: 0.03
   bulletScale: {x: 1, y: 1, z: 1}
   damage: 30
   deadTimer: 1
