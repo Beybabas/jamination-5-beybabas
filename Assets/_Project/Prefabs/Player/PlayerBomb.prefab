@@ -80,13 +80,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _particleSystem: {fileID: 5048153194044277922, guid: f926a3bfb938c8f42af2f8db6dcdaf6b, type: 3}
   clip:
-  - {fileID: 8300000, guid: dc423da619b180e4ebf5dae76d8330aa, type: 3}
-  - {fileID: 8300000, guid: efd28552b626806479db5e37f41c374a, type: 3}
-  - {fileID: 8300000, guid: a70bb29952c117547ac1082cc9993d6c, type: 3}
-  - {fileID: 8300000, guid: ebf0bb414d626ee4886687fcf1dffc8d, type: 3}
-  - {fileID: 8300000, guid: f15f089eae6e7dc43943802f4636f3eb, type: 3}
-  - {fileID: 8300000, guid: fc35f8f2ecde1074dab1d9c2eba70361, type: 3}
-  - {fileID: 8300000, guid: e1969c1530c68d641a804fbc01eba2f9, type: 3}
+  - {fileID: 8300000, guid: c9e7898622a518d4eba651cb821eed9a, type: 3}
+  - {fileID: 8300000, guid: c1cbcaf8df08e6840a646b96be657b9d, type: 3}
+  - {fileID: 8300000, guid: 51f0e987aa3de2f4897263080132c52a, type: 3}
+  - {fileID: 8300000, guid: 473e235d505cd0241835c78eed8f98e1, type: 3}
+  - {fileID: 8300000, guid: 68696de79973b3447aa192659705840b, type: 3}
+  - {fileID: 8300000, guid: 2304b4be0bba40341a09236e5322379a, type: 3}
+  - {fileID: 8300000, guid: b5f014aa353526a468007a5ef7cb8cd5, type: 3}
   bombDamage: 10
   explosionRadius: 2
   bombEffect: {fileID: 1787963530858246551, guid: 2ecac2a7aad70eb41bebecb3d1741d51, type: 3}
