@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class HealthComponent : MonoBehaviour, IDamageable
 {
+    public bool isPlayer;
     public event Action OnDie;
 
     public EnemyData enemyData;
@@ -22,6 +23,7 @@ public class HealthComponent : MonoBehaviour, IDamageable
 
         if (CurrentHealth <= 0)
         {
+            if (isPlayer) GameManager.instance.OnGameOver?.Invoke();
             OnDie?.Invoke();
         }
     }
