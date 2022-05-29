@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
 
+    public bool gameOver;
     public HealthComponent playerHealth;
 
     public Action OnGameOver;
@@ -31,6 +32,7 @@ public class GameManager : MonoBehaviour
 
     public void GameOver()
     {
+        gameOver = true;
         canvas.SetActive(true);
         Time.timeScale = 0.01f;
         Debug.Log("Oyun bitti amına koduklarım");

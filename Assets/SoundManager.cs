@@ -18,4 +18,6 @@ public class SoundManager : MonoBehaviour
     {
      source.PlayOneShot(clip);   
     }
+
+    public void PlayBombSound(AudioClip clip) => source.PlayOneShot(clip);
 }

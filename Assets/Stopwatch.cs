@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class Stopwatch : MonoBehaviour
 {
-    private bool _stopWatchActive = true;
+    public bool stopWatchActive = true;
     private float _currentTime;
     public int startMins;
     public TextMeshProUGUI currentTimeText;
@@ -19,7 +19,7 @@ public class Stopwatch : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (_stopWatchActive) _currentTime += Time.deltaTime;
+        if (!GameManager.instance.gameOver) _currentTime += Time.deltaTime;
 
         TimeSpan time = TimeSpan.FromSeconds(_currentTime);
         currentTimeText.text = time.ToString(@"mm\:ss\:fff");

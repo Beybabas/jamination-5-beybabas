@@ -22,7 +22,11 @@ public class EnemyBulletBehaviour : MonoBehaviour
 
     private void OnEnable()
     {
-        _healthComponent.OnDie += () => Destroy(gameObject);
+        _healthComponent.OnDie += () =>
+        {
+            Instantiate(particle, transform.position, Quaternion.identity);
+            Destroy(gameObject);
+        };
     }
 
     

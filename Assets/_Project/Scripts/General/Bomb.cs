@@ -4,11 +4,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
 using Unity.Mathematics;
+using Random = UnityEngine.Random;
 
 public class Bomb : MonoBehaviour
 {
     [SerializeField] private ParticleSystem _particleSystem;
 
+    [SerializeField] private AudioClip[] clip;
+    
     [SerializeField] private int bombDamage = 50;
     [SerializeField] private float explosionRadius = 10;
 
@@ -48,6 +51,7 @@ public class Bomb : MonoBehaviour
             }
         }
 
+        SoundManager.Instance.PlayBombSound(clip[Random.Range(0, clip.Length)]);
         GameObject spawnedBomb = Instantiate(bombEffect, transform.position, quaternion.identity);
         
         
