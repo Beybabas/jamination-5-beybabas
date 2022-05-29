@@ -17,12 +17,12 @@ public class Bomb : MonoBehaviour
 
     private void Awake()
     {
-        transform.DOPunchScale(Vector3.one * 0.5f, 0.5f).SetDelay(1).OnComplete(
+        transform.DOPunchScale(Vector3.one * 0.5f, 0.5f).OnComplete(
             () =>
-                transform.DOPunchScale(Vector3.one * 0.5f, 0.25f).OnComplete(
+                transform.DOPunchScale(Vector3.one * 0.5f, 0.3f).OnComplete(
                     () =>
-                        transform.DOPunchScale(Vector3.one * 0.5f, 0.18f)).OnComplete(
-                    () => transform.DOScale(Vector3.one * 2f, 0.18f).OnComplete(
+                        transform.DOPunchScale(Vector3.one * 0.5f, 0.1f)).OnComplete(
+                    () => transform.DOScale(Vector3.one * 2.5f, 0.1f).OnComplete(
                         () =>
                             AOEDmg()
                     )

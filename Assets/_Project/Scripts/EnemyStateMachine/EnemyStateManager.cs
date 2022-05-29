@@ -29,7 +29,10 @@ public class EnemyStateManager : MonoBehaviour
     public int bulletDamage;
     public float bulletForce;
     public LineRenderer rayRenderer;
-
+    public float tmpWidth;
+    
+    
+    
     public RushToPlayerState rushToPlayerState = new RushToPlayerState();
     public ApproachState approachState = new ApproachState();
     public RangerAttackState rangerAttackState = new RangerAttackState();
@@ -49,7 +52,8 @@ public class EnemyStateManager : MonoBehaviour
         starAgent.maxSpeed = enemyData.moveSpeed;
 
         enemyType = enemyData.enemyType;
-
+        
+        tmpWidth=  rayRenderer.endWidth;
         InitialState();
     }
 

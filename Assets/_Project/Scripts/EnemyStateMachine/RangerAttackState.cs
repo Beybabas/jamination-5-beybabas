@@ -9,7 +9,7 @@ public class RangerAttackState : EnemyBaseState
     public override void EnterState(EnemyStateManager enemy)
     {
         enemy.StartCoroutine(RangerAttackSequence(enemy));
-        enemy.rayRenderer.SetPosition(0, enemy.transform.position+enemy.transform.up*0.8f);
+        
     }
 
     public override void UpdateState(EnemyStateManager enemy)
@@ -31,7 +31,8 @@ public class RangerAttackState : EnemyBaseState
 
 
         enemy.transform.up = (enemy.playerTransform.position - enemy.transform.position).normalized;
-
+        
+        enemy.rayRenderer.SetPosition(0, enemy.transform.position+enemy.transform.up*0.4f);
         enemy.rayRenderer.SetPosition(1, enemy.playerTransform.position);
     }
 
@@ -42,9 +43,9 @@ public class RangerAttackState : EnemyBaseState
 
     private IEnumerator RangerAttackSequence(EnemyStateManager enemy)
     {
-        float tmpWidth = enemy.rayRenderer.endWidth;
+        
 
-        float a = 0.3f;
+        float a = 0.15f;
         float b = 0.6f;
 
         for (int i = 1; i <= 4; i++)
@@ -54,8 +55,8 @@ public class RangerAttackState : EnemyBaseState
 
             yield return new WaitForSeconds(a / i);
 
-            enemy.rayRenderer.endWidth = tmpWidth;
-            enemy.rayRenderer.startWidth = tmpWidth;
+            enemy.rayRenderer.endWidth =enemy.tmpWidth;
+            enemy.rayRenderer.startWidth = enemy.tmpWidth;
 
             yield return new WaitForSeconds(b / i);
         }

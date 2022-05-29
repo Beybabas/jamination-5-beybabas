@@ -16,6 +16,6 @@ MonoBehaviour:
   moveSpeed: 3
   contactRadius: 0
   enemyType: 1
-  maxHealth: 100
+  maxHealth: 200
   contactDamage: 0
   projectileDamage: 0
