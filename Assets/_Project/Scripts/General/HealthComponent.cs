@@ -4,23 +4,23 @@ using UnityEngine;
 
 public class HealthComponent : MonoBehaviour, IDamageable
 {
-    public int currentHealth;
-
     public event Action OnDie;
 
     public EnemyData enemyData;
 
     private void Awake()
     {
-        currentHealth = enemyData.maxHealth;
+        CurrentHealth = enemyData.maxHealth;
     }
 
 
+    public int CurrentHealth { get; set; }
+
     public void Damage(int amount)
     {
-        currentHealth -= amount;
+        CurrentHealth -= amount;
 
-        if (currentHealth <= 0)
+        if (CurrentHealth <= 0)
         {
             OnDie?.Invoke();
         }

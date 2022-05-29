@@ -21,7 +21,7 @@ public class PlayerController : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
     }
 
-    private void OnEnable()
+    /*private void OnEnable()
     {
         _healthComponent.OnDie += GameManager.instance.GameOver;
     }
@@ -29,7 +29,7 @@ public class PlayerController : MonoBehaviour
     private void OnDisable()
     {
         _healthComponent.OnDie -= GameManager.instance.GameOver;
-    }
+    }*/
 
     void Update()
     {

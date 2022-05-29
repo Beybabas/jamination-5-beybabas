@@ -51,6 +51,7 @@ MonoBehaviour:
   singleShot: {fileID: 11400000, guid: 31fbfd38a30d56844bda1b65107ae911, type: 2}
   bigShot: {fileID: 11400000, guid: 3112320b152a69440b6ad2efc8c3a86a, type: 2}
   currentBullet: {fileID: 11400000, guid: 31fbfd38a30d56844bda1b65107ae911, type: 2}
+  hitParticle: {fileID: 5048153194044277924, guid: f926a3bfb938c8f42af2f8db6dcdaf6b, type: 3}
   rb: {fileID: -4305195516771546441}
   spriteRenderer: {fileID: 5995074628923288510}
 --- !u!50 &-4305195516771546441
@@ -70,7 +71,7 @@ Rigidbody2D:
   m_AngularDrag: 0.05
   m_GravityScale: 0
   m_Material: {fileID: 6200000, guid: dae4c928672ed1a48ac260be4da72333, type: 2}
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
@@ -250,7 +251,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a38622f47da9a2f489fa21a008062031, type: 2}
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

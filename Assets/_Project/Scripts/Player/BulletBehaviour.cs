@@ -7,11 +7,11 @@ public class BulletBehaviour : MonoBehaviour
     [SerializeField] private BulletData singleShot;
     [SerializeField] private BulletData bigShot;
     [HideInInspector] public BulletData currentBullet;
-
+    [SerializeField] private GameObject hitParticle;
     [SerializeField] private Rigidbody2D rb;
-    
-    
-[SerializeField] private SpriteRenderer spriteRenderer;
+
+
+    [SerializeField] private SpriteRenderer spriteRenderer;
 
 
     public void SelectSingleShot()
@@ -50,19 +50,24 @@ public class BulletBehaviour : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D col)
     {
-        var enemyBaseState = col.GetComponent<EnemyStateManager>();
-        if (enemyBaseState != null)
+        if (col.TryGetComponent(out IDamageable idamageable))
         {
-            if (col.TryGetComponent(out IDamageable idamageable))
-            {
-                idamageable.Damage(currentBullet.damage);
-                BulletDestroyer();
-            }
+            if (col.GetComponent<PlayerController>()) return;
+
+            if (currentBullet.damage < idamageable.CurrentHealth) SetHitParticle();
+
+            CinemachineShake.Instance.ShakeCamera(2f, .1f); // Maybe when enemy dies? 
+            idamageable.Damage(currentBullet.damage);
+            BulletDestroyer();
         }
     }
 
+    public void SetHitParticle()
+    {
+        if (hitParticle != null) Instantiate(hitParticle, transform.position, Quaternion.identity);
+    }
 
-    
+
     private void BulletDestroyer(float deadTimer = 0f)
     {
         Destroy(gameObject, deadTimer);
