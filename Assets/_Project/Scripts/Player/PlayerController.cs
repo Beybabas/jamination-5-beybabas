@@ -91,6 +91,11 @@ public class PlayerController : MonoBehaviour
         _canDash = true;
     }
 
+    public bool IsDashing()
+    {
+        return _isDashing;
+    }
+
 
 
 }
