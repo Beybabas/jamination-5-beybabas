@@ -15,19 +15,20 @@ public class RangerAttackState : EnemyBaseState
 
     public override void UpdateState(EnemyStateManager enemy)
     {
-        elapsedTime = Time.deltaTime;
+        elapsedTime += Time.deltaTime;
         
-        Debug.Log(Vector2.Distance(enemy.playerTransform.position, enemy.transform.position));
+        //Debug.Log(Vector2.Distance(enemy.playerTransform.position, enemy.transform.position));
         if (elapsedTime > 0.1f)
         {
            
-            Debug.Log("girdi");
             if (Vector2.Distance(enemy.playerTransform.position, enemy.transform.position) > ArrivalDistanceHolder.SEEK_RANGE + 2.5f)
             {
-                Debug.Log("approach state");
                 enemy.StopAllCoroutines();
                 enemy.SwitchState(enemy.approachState);
             }
+            
+            
+            
             elapsedTime = 0;
         }
     }
@@ -40,6 +41,7 @@ public class RangerAttackState : EnemyBaseState
 
     private IEnumerator RangerAttackSequence(EnemyStateManager enemy)
     {
+        
         for (int i = 0; i < 3; i++)
         {
             
