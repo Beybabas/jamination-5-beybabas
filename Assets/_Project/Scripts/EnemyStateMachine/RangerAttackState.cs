@@ -9,7 +9,7 @@ public class RangerAttackState : EnemyBaseState
     public override void EnterState(EnemyStateManager enemy)
     {
         enemy.StartCoroutine(RangerAttackSequence(enemy));
-        enemy.rayRenderer.SetPosition(0, enemy.transform.position);
+        enemy.rayRenderer.SetPosition(0, enemy.transform.position+enemy.transform.up*0.8f);
     }
 
     public override void UpdateState(EnemyStateManager enemy)
@@ -19,7 +19,7 @@ public class RangerAttackState : EnemyBaseState
         //Debug.Log(Vector2.Distance(enemy.playerTransform.position, enemy.transform.position));
         if (elapsedTime > 0.1f)
         {
-            if (Vector2.Distance(enemy.playerTransform.position, enemy.transform.position) > ArrivalDistanceHolder.SEEK_RANGE * 2)
+            if (Vector2.Distance(enemy.playerTransform.position, enemy.transform.position) > ArrivalDistanceHolder.SEEK_RANGE * 2.5)
             {
                 enemy.StopAllCoroutines();
                 enemy.SwitchState(enemy.approachState);
@@ -44,8 +44,8 @@ public class RangerAttackState : EnemyBaseState
     {
         float tmpWidth = enemy.rayRenderer.endWidth;
 
-        float a = 0.5f;
-        float b = 1f;
+        float a = 0.3f;
+        float b = 0.6f;
 
         for (int i = 1; i <= 4; i++)
         {

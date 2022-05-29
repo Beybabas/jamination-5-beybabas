@@ -189,6 +189,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6038450ba7d544ce8800c630d069d5a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isPlayer: 0
   enemyData: {fileID: 11400000, guid: 5a99dec291e6422448cc722c0750f207, type: 2}
 --- !u!114 &5516830305053672736
 MonoBehaviour:
@@ -296,7 +297,7 @@ LineRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 0}
+  - {fileID: 2100000, guid: 93151189b0d30af41ae3d739c6b2e315, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -322,7 +323,7 @@ LineRenderer:
   - {x: 0, y: 0, z: 0}
   m_Parameters:
     serializedVersion: 3
-    widthMultiplier: 0.1
+    widthMultiplier: 0.05
     widthCurve:
       serializedVersion: 2
       m_Curve:
