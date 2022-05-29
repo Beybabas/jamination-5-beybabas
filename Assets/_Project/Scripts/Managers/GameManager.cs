@@ -32,7 +32,7 @@ public class GameManager : MonoBehaviour
     public void GameOver()
     {
         canvas.SetActive(true);
-        Time.timeScale = 0.1f;
+        Time.timeScale = 0.01f;
         Debug.Log("Oyun bitti amına koduklarım");
     }
 }
