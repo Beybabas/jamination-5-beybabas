@@ -12,9 +12,10 @@ public class ApproachState : EnemyBaseState
     public override void UpdateState(EnemyStateManager enemy)
     {
         enemy.starAgent.destination = enemy.playerTransform.position;
-
+        enemy.transform.up = (enemy.playerTransform.position-enemy.transform.position).normalized;
+        
         elapsedTime += Time.deltaTime;
-
+        
         if (elapsedTime > 0.1f)
         {
             elapsedTime = 0;

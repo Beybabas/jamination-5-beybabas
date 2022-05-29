@@ -13,7 +13,7 @@ public class EnemyBulletBehaviour : MonoBehaviour
     {
         _bulletForce = bulletForce;
         _bulletDamage = bulletDamage;
-        rb.AddForce(bulletDir, ForceMode2D.Impulse);
+        rb.AddForce(bulletDir*_bulletForce, ForceMode2D.Impulse);
     }
 
 

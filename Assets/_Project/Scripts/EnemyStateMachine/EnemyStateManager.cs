@@ -28,7 +28,7 @@ public class EnemyStateManager : MonoBehaviour
     public EnemyBulletBehaviour enemyBullet;
     public int bulletDamage;
     public float bulletForce;
-
+    public LineRenderer rayRenderer;
 
     public RushToPlayerState rushToPlayerState = new RushToPlayerState();
     public ApproachState approachState = new ApproachState();
