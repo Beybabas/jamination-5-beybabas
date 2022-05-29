@@ -26,10 +26,10 @@ public class PlayerController : MonoBehaviour
     private Vector2 _dashDir;
     private bool _canDash=true;
     private bool _isDashing;
-    
-    
 
-    void Awake()
+    [SerializeField]  private GameObject _playerBomb;
+
+  private  void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
     }
@@ -54,9 +54,12 @@ public class PlayerController : MonoBehaviour
         {
             _isDashing = true;
             _canDash = false;
-
+                
+            Instantiate(_playerBomb, transform.position, Quaternion.identity);
             _dashDir = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
 
+           
+            
             if (_dashDir == Vector2.zero)
             {
                 _dashDir = new Vector2(Random.Range(0,2), Random.Range(0,2));

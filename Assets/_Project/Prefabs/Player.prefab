@@ -289,6 +289,7 @@ MonoBehaviour:
   _healthComponent: {fileID: 3111207856683523940}
   _dashVelocity: 10
   _dashTime: 0.3
+  _playerBomb: {fileID: 1612060970686297152, guid: 698167c93ec0151478d9b3f41e6a348d, type: 3}
 --- !u!114 &1931545610487733424
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -347,7 +348,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3cc5ff4b6c2d2674c899d8add2b4ba7e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnInterval: 0.001
+  spawnInterval: 0.02
   fadeTime: 1
   echo: {fileID: 7988344773606745063, guid: 0634c8149247a2c4fa740e2cc1308123, type: 3}
   _playerController: {fileID: 0}
