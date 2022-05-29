@@ -1,6 +1,8 @@
 ﻿using System;
+using System.Collections;
 using Unity.Mathematics;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 
 public class PlayerController : MonoBehaviour
@@ -15,15 +17,14 @@ public class PlayerController : MonoBehaviour
 
     [SerializeField] private HealthComponent _healthComponent;
 
-    [Header("Dash Settings")] [SerializeField]
-    private TrailRenderer _dashTrail;
+    [Header("Dash Settings")] 
 
     
     [SerializeField] private float _dashVelocity;
     
     [SerializeField] private float _dashTime;
     private Vector2 _dashDir;
-    private bool _canDash;
+    private bool _canDash=true;
     private bool _isDashing;
     
     
@@ -53,8 +54,25 @@ public class PlayerController : MonoBehaviour
         {
             _isDashing = true;
             _canDash = false;
-            _dashTrail.emitting = true;
+
+            _dashDir = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
+
+            if (_dashDir == Vector2.zero)
+            {
+                _dashDir = new Vector2(Random.Range(0,2), Random.Range(0,2));
+            }
+
+            StartCoroutine(StopDashing());
         }
+
+        if (_isDashing)
+        {
+            rb.velocity = _dashDir.normalized * _dashVelocity;
+            return;
+            
+        }
+        
+        
         
         
 
@@ -64,7 +82,15 @@ public class PlayerController : MonoBehaviour
 
 
     }
-   
 
-   
+
+    private IEnumerator StopDashing()
+    {
+        yield return new WaitForSeconds(_dashTime);
+        _isDashing = false;
+        _canDash = true;
+    }
+
+
+
 }
