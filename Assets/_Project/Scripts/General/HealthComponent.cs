@@ -6,6 +6,7 @@ public class HealthComponent : MonoBehaviour, IDamageable
 {
     public event Action OnDie;
 
+    public bool isPlayer;
     public EnemyData enemyData;
 
     private void Awake()
@@ -22,7 +23,8 @@ public class HealthComponent : MonoBehaviour, IDamageable
 
         if (CurrentHealth <= 0)
         {
-            OnDie?.Invoke();
+            if (isPlayer) GameManager.instance.OnGameOver?.Invoke();
+            OnDie?.Invoke();    
         }
     }
 }
