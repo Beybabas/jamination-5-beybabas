@@ -7,6 +7,8 @@ public class EnemyBulletBehaviour : MonoBehaviour
 {
     [SerializeField] private Rigidbody2D rb;
 
+    [SerializeField] private GameObject particle;
+    
     private int _bulletDamage;
     private float _bulletForce;
 
@@ -49,6 +51,7 @@ public class EnemyBulletBehaviour : MonoBehaviour
 
     private void BulletDestroyer(float deadTimer = 0f)
     {
+        Instantiate(particle, transform.position, Quaternion.identity);
         Destroy(gameObject, deadTimer);
     }
 }

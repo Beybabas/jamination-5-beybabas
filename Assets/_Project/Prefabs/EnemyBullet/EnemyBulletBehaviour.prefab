@@ -50,6 +50,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: -4305195516771546441}
+  particle: {fileID: 5048153194044277924, guid: f926a3bfb938c8f42af2f8db6dcdaf6b, type: 3}
 --- !u!50 &-4305195516771546441
 Rigidbody2D:
   serializedVersion: 4
@@ -207,6 +208,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6038450ba7d544ce8800c630d069d5a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isPlayer: 0
   enemyData: {fileID: 11400000, guid: 224e08027c7e884459270361ae35e98e, type: 2}
 --- !u!1 &5995074628923288640
 GameObject:
@@ -282,7 +284,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.9150943, g: 0.34100214, b: 0.89166826, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
