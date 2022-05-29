@@ -24,7 +24,15 @@ public class ApproachState : EnemyBaseState
             {
 
                 enemy.starAgent.destination = enemy.transform.position;
-                enemy.SwitchState(enemy.rangerAttackState);
+                if (enemy.enemyType == EnemyType.ranger)
+                {
+                    enemy.SwitchState(enemy.rangerAttackState);
+                }else if (enemy.enemyType == EnemyType.rotator)
+                {
+                    enemy.SwitchState(enemy.spinAndAttakState);
+                }
+
+                
             }
         }
     }

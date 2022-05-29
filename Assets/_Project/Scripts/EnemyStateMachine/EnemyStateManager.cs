@@ -33,6 +33,8 @@ public class EnemyStateManager : MonoBehaviour
     public RushToPlayerState rushToPlayerState = new RushToPlayerState();
     public ApproachState approachState = new ApproachState();
     public RangerAttackState rangerAttackState = new RangerAttackState();
+    public SpinAndAttakState spinAndAttakState = new SpinAndAttakState();
+    
 
     public void SetParticleEffect()
     {
@@ -86,6 +88,9 @@ public class EnemyStateManager : MonoBehaviour
                 SwitchState(rushToPlayerState);
                 break;
             case EnemyType.ranger:
+                SwitchState(approachState);
+                break;
+            case EnemyType.rotator:
                 SwitchState(approachState);
                 break;
         }

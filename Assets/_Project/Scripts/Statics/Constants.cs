@@ -12,6 +12,7 @@ public enum EnemyType
 {
     kamikaze,
     ranger,
+    rotator,
     
 }
 
