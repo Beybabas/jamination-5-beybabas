@@ -1,5 +1,6 @@
 ﻿using System;
 using Pathfinding;
+using Unity.Mathematics;
 using UnityEngine;
 
 
@@ -8,7 +9,7 @@ public class EnemyStateManager : MonoBehaviour
     public EnemyData enemyData;
 
     public GameObject hitParticle;
-    
+
     public EnemyBaseState currentState;
 
     public AIPath starAgent;
@@ -19,16 +20,25 @@ public class EnemyStateManager : MonoBehaviour
 
     public EnemyType enemyType;
 
-    public RushToPlayerState rushToPlayerState = new RushToPlayerState();
+
     public DieState dieState = new DieState();
 
     public HealthComponent healthComponent;
 
+    public EnemyBulletBehaviour enemyBullet;
+    public int bulletDamage;
+    public float bulletForce;
+
+
+    public RushToPlayerState rushToPlayerState = new RushToPlayerState();
+    public ApproachState approachState = new ApproachState();
+    public RangerAttackState rangerAttackState = new RangerAttackState();
 
     public void SetParticleEffect()
     {
         Instantiate(hitParticle, transform.position, Quaternion.identity);
     }
+
     private void Awake()
     {
         playerTransform = FindObjectOfType<PlayerController>().transform;
@@ -76,7 +86,7 @@ public class EnemyStateManager : MonoBehaviour
                 SwitchState(rushToPlayerState);
                 break;
             case EnemyType.ranger:
-                SwitchState(rushToPlayerState);
+                SwitchState(approachState);
                 break;
         }
     }
@@ -85,5 +95,12 @@ public class EnemyStateManager : MonoBehaviour
     private void ChangeDieState()
     {
         SwitchState(dieState);
+    }
+
+
+    public void FireProjectile(Vector2 bulletDir, float bulletForce, int bulletDamage)
+    {
+        var bulletBehaviour = Instantiate(enemyBullet, transform.position, quaternion.identity);
+        bulletBehaviour.FireBullet(bulletDir, bulletForce, bulletDamage);
     }
 }
