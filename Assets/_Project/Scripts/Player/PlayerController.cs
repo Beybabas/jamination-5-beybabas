@@ -14,6 +14,18 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private Transform playerSprite;
 
     [SerializeField] private HealthComponent _healthComponent;
+
+    [Header("Dash Settings")] [SerializeField]
+    private TrailRenderer _dashTrail;
+
+    
+    [SerializeField] private float _dashVelocity;
+    
+    [SerializeField] private float _dashTime;
+    private Vector2 _dashDir;
+    private bool _canDash;
+    private bool _isDashing;
+    
     
 
     void Awake()
@@ -35,7 +47,16 @@ public class PlayerController : MonoBehaviour
     {
         inputX = Input.GetAxisRaw("Horizontal");
         inputY = Input.GetAxisRaw("Vertical");
+        var dashInput = Input.GetKeyDown(KeyCode.Space);
 
+        if (dashInput && _canDash)
+        {
+            _isDashing = true;
+            _canDash = false;
+            _dashTrail.emitting = true;
+        }
+        
+        
 
         rb.velocity = new Vector2(inputX * moveSpeed, inputY * moveSpeed);
 
