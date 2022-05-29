@@ -31,7 +31,7 @@ public class WaveSpawner : MonoBehaviour
         {
             _currentWave = waves[_currentWaveIndex % waves.Length];
 
-            if (GameManager.instance.player == null)
+            if (GameManager.instance.player.CurrentHealth <= 0)
             {
                 yield break;
             }
