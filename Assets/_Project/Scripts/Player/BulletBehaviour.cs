@@ -10,9 +10,16 @@ public class BulletBehaviour : MonoBehaviour
     [SerializeField] private GameObject hitParticle;
     [SerializeField] private Rigidbody2D rb;
 
+    [SerializeField] private AudioSource audioSource;
+    [SerializeField] private AudioClip hitClip;
+    
 
     [SerializeField] private SpriteRenderer spriteRenderer;
 
+    public void PlayHitSound()
+    {
+        audioSource.PlayOneShot(hitClip);
+    }
 
     public void SelectSingleShot()
     {
@@ -56,7 +63,10 @@ public class BulletBehaviour : MonoBehaviour
 
             if (currentBullet.damage < idamageable.CurrentHealth) SetHitParticle();
 
-            CinemachineShake.Instance.ShakeCamera(2f, .1f); // Maybe when enemy dies? 
+            PlayHitSound();
+            CinemachineShake.Instance.ShakeCamera(1.2f, .1f); 
+            ChromaticAberrationEffect.Instance.SetWeight(.5f); // Maybe when enemy dies? 
+            // PaniniEffect.Instance.SetWeight(.5f);
             idamageable.Damage(currentBullet.damage);
             BulletDestroyer();
         }
