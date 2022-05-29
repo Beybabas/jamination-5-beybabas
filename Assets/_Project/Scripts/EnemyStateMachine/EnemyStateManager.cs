@@ -52,8 +52,12 @@ public class EnemyStateManager : MonoBehaviour
         starAgent.maxSpeed = enemyData.moveSpeed;
 
         enemyType = enemyData.enemyType;
+
+        if (rayRenderer != null)
+        {
+            tmpWidth=  rayRenderer.endWidth;
+        }
         
-        tmpWidth=  rayRenderer.endWidth;
         InitialState();
     }
 
